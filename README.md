@@ -4,7 +4,7 @@
 
 A high-performance, responsive AI Engineering portfolio built with **React**, **Vite**, **TypeScript**, **GSAP**, and **Framer Motion**. Features a bespoke "Dark Glass Cosmos" design system with neural-network canvas animations, glassmorphism bento grids, and smooth Lenis scroll.
 
-🌐 **Live Demo:** [Deploying Soon...]
+🌐 **Live Demo:** https://bishal-roypy.vercel.app/
 
 ---
 

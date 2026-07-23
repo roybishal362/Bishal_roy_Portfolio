@@ -63,7 +63,8 @@ export function Card({ name, props, onAsk }: { name: string; props: Record<strin
     return (
       <div className="cc ac">
         <div className="ac-top">
-          <AiAvatar state="idle" size={56} />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className="ac-photo" src="/bishal.png" alt="Bishal Roy" />
           <div><div className="ac-name">{PROFILE.name}</div><div className="ac-role">{PROFILE.role} · {PROFILE.location}</div></div>
         </div>
         <p className="ac-bio">Bengali kid from Chandrapur, obsessed with building AI that actually works and refuses to hallucinate. Competition-driven, cricket-feral, anime-loving night owl. 😁</p>

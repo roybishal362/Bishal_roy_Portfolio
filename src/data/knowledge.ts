@@ -83,7 +83,6 @@ export const PROJECTS: Project[] = [
       repo: "https://github.com/roybishal362/Kakehashi",
       demo: "https://kakehashi-4e1v.vercel.app/",
       video: "https://youtu.be/OtaC-AKZvlE",
-      api: "https://far-away-hackthon.onrender.com",
     },
     image: "/projects/kakehashi.webp",
   },

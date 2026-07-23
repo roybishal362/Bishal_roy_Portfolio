@@ -114,6 +114,27 @@ export function Card({ name, props, onAsk }: { name: string; props: Record<strin
     );
   }
 
+  if (name === "show_resume") {
+    const doc = <><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" /><path d="M14 3v6h6" /></>;
+    return (
+      <div className="cc">
+        <div className="cc-head"><div className="t">Résumé</div><div className="s">Two versions — take whichever fits what you need.</div></div>
+        <div className="ct-grid">
+          <div className="ct-tile">
+            <div className="ct-top"><span className="ct-ic" style={{ color: "#34d399" }}><svg viewBox="0 0 24 24" aria-hidden>{doc}</svg></span><span className="ct-label">1-page</span></div>
+            <div className="ct-value">The tight recruiter version — highlights only, fits on one page.</div>
+            <a className="ct-btn" href="/Bishal_Roy_Resume_1page.pdf" target="_blank" rel="noopener noreferrer">Open 1-page ↗</a>
+          </div>
+          <div className="ct-tile">
+            <div className="ct-top"><span className="ct-ic" style={{ color: "#60a5fa" }}><svg viewBox="0 0 24 24" aria-hidden>{doc}</svg></span><span className="ct-label">Detailed</span></div>
+            <div className="ct-value">Full version — every project, metric and competition, for a deeper read.</div>
+            <a className="ct-btn" href="/Bishal_Roy_Resume.pdf" target="_blank" rel="noopener noreferrer">Open detailed ↗</a>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (name === "show_experience") {
     return (
       <div className="cc">

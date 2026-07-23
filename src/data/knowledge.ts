@@ -18,6 +18,18 @@ export const PROFILE = {
     "Applied ML / AI Engineer who specialises in production Generative AI — multi-agent systems, retrieval-augmented generation (RAG), and LLM fine-tuning. Ships grounded, cited, low-latency systems, not demos. Signature: making AI that refuses to hallucinate.",
 };
 
+// Semester-wise CGPA (B.E. AI & Data Science, DYPIT Pune). Aggregate 8.99/10.
+export const SEMESTER_CGPA: { sem: string; year: string; cgpa: string }[] = [
+  { sem: "I", year: "1st year", cgpa: "9.00" },
+  { sem: "II", year: "1st year", cgpa: "8.66" },
+  { sem: "III", year: "2nd year", cgpa: "8.82" },
+  { sem: "IV", year: "2nd year", cgpa: "8.89" },
+  { sem: "V", year: "3rd year", cgpa: "8.48" },
+  { sem: "VI", year: "3rd year", cgpa: "8.90" },
+  { sem: "VII", year: "4th year", cgpa: "9.25" },
+  { sem: "VIII", year: "4th year", cgpa: "9.55" },
+];
+
 export interface Metric { label: string; value: string; }
 export interface ProjectLinks { repo?: string; demo?: string; video?: string; api?: string; bot?: string; }
 

@@ -1,57 +1,120 @@
-# Bishal Roy — Portfolio
+<div align="center">
 
-An editorial-technical ("Systems Journal") portfolio for an **Applied GenAI / LLM Engineer**.
-Its centerpiece isn't a screenshot of my work — it's a working demo of it: an **"Interrogate my
-career" agent** that answers recruiter questions two ways, side by side:
+# Bishal Roy — AI-Native Portfolio
 
-- **Ungrounded** — a raw LLM with no sources. It guesses.
-- **Grounded (mine)** — a RAG agent that answers *only* from my documented work and **cites every
-  claim**, refusing to invent facts.
+**Don't read my résumé. Ask my AI.**
 
-That contrast is my Kakehashi thesis (51% vs 4% accuracy, 0 vs 69 hallucinations) turned into
-something a recruiter can actually play with.
+A portfolio you *talk to*. Instead of scrolling a static page, you ask a grounded digital twin — it answers in my voice, then renders the answer as rich, interactive UI.
 
-## Stack
+[![Next.js](https://img.shields.io/badge/Next.js-15-000?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-149ECA?style=flat-square&logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Claude](https://img.shields.io/badge/Anthropic-Claude-D97757?style=flat-square)](https://www.anthropic.com/)
+[![Vercel](https://img.shields.io/badge/Vercel-deploy-000?style=flat-square&logo=vercel)](https://vercel.com/)
 
-- **Next.js 15** (App Router) + **React 19** + **TypeScript**
-- Bespoke editorial CSS (no UI framework), **Framer Motion** for motion
-- LLM via **Groq** (`/api/interrogate` route). Retrieval is a dependency-free lexical retriever
-  over `src/data/profile.ts` — swap for a vector store later without changing the API.
+</div>
 
-## Run it
+---
+
+## Why this exists
+
+A résumé is a static list that every candidate hands over. It can't answer follow-ups, and most people never read past the first third.
+
+So I built the alternative: **an AI that knows my work and answers questions about it.** Ask *"what's your strongest project?"* and you get a real answer plus a swipeable card deck. Ask *"what have you won?"* and the placements render as a ranked list. Same information a recruiter wants — delivered the way they'd actually consume it.
+
+It's also an honest demo of what I build: grounded systems that **refuse to hallucinate**.
+
+## How it works
+
+```
+Landing (/)                          Chat (/chat?query=…)
+┌──────────────────────┐             ┌──────────────────────────────┐
+│  orb + memoji        │  navigates  │  reactive memoji (header)    │
+│  "Ask my AI"  ───────┼────────────▶│  answer + generative-UI card │
+│  left nav rail       │             │  quick-questions rail        │
+└──────────────────────┘             └──────────────────────────────┘
+```
+
+**The grounding trick.** The model never invents facts. Everything it can say comes from one typed source of truth (`src/data/knowledge.ts`), serialised into a prompt-cached system prompt. The tools it can call don't *fetch* data — they are **UI triggers**. The model decides *which card to show*; the card's contents render from curated data.
+
+The LLM controls presentation, the data controls truth, and hallucination has nowhere to enter.
+
+```
+question → Claude (streaming + native tool_use)
+              │
+              ├── text ───────┐
+              └── tool_use ───┤  re-emitted over a small custom SSE protocol
+                              ▼
+                  client block reducer → prose + inline React cards
+```
+
+## Features
+
+| | |
+|---|---|
+| **Grounded digital twin** | Answers in first person from a typed knowledge base. Won't invent numbers, employers or placements. |
+| **Generative UI** | The model picks the card: project carousel, experience timeline, competitions, research, skills, résumé, contact. |
+| **Reactive Memoji** | 20 expressions across 10 states — thinks, talks, celebrates, gets confused. Cross-fades only *after* the next frame has loaded, so it never flickers. |
+| **Voice mode** | Hands-free: speech recognition in, natural TTS out, then it listens again. Falls back to browser speech when no key is set. |
+| **Streaming + failover** | Server-Sent Events with prompt caching; Groq automatically covers for Anthropic if it fails. |
+| **Project deep-dives** | Real screenshots pulled from each project's own repo, expanding into problem → approach → architecture → results, with live demo links. |
+
+## Tech stack
+
+- **Framework** — Next.js 15 (App Router), React 19, TypeScript (strict)
+- **AI** — Anthropic Claude: streaming with native `tool_use`, prompt-cached system prompt; Groq fallback
+- **Voice** — Web Speech Recognition · ElevenLabs TTS (optional) with `speechSynthesis` fallback
+- **UI** — Hand-written CSS (no UI framework), Framer Motion, Three.js orb, WebGL fluid cursor
+- **Deploy** — Vercel
+
+## Running locally
 
 ```bash
+git clone https://github.com/roybishal362/Bishal_roy_Portfolio.git
+cd Bishal_roy_Portfolio
 npm install
-npm run dev      # http://localhost:3000
+cp .env.local.example .env.local   # add your keys
+npm run dev                        # http://localhost:3000
 ```
 
-The agent works **offline out of the box** (deterministic answers; retrieval + citations are real).
-To get live natural-language answers:
+### Environment
 
-```bash
-cp .env.local.example .env.local
-# then paste a free key from https://console.groq.com/keys into GROQ_API_KEY
+| Variable | Required | Purpose |
+|---|:---:|---|
+| `ANTHROPIC_API_KEY` | ✅ | Powers the chat |
+| `ANTHROPIC_MODEL` | — | Defaults to `claude-haiku-4-5-20251001` |
+| `GROQ_API_KEY` | — | Automatic fallback if Anthropic is unavailable |
+| `GROQ_MODEL` | — | Defaults to `llama-3.3-70b-versatile` |
+| `ELEVENLABS_API_KEY` | — | Natural voice. Without it, voice mode uses the browser's built-in speech |
+| `ELEVENLABS_VOICE_ID` | — | Override the default male voice |
+
+> `.env.local` is gitignored and never committed. On Vercel, add these under **Settings → Environment Variables**.
+
+## Project structure
+
+```
+src/
+├── app/
+│   ├── page.tsx              # landing — orb, memoji, prompt, nav rail
+│   ├── chat/page.tsx         # full-screen conversation
+│   ├── api/chat/route.ts     # Claude streaming + tool_use → SSE, Groq fallback
+│   └── api/tts/route.ts      # natural text-to-speech
+├── components/
+│   ├── chat/                 # ChatScreen, cards, quick questions, prompt bar
+│   ├── cards/                # project poster cards + expand modal
+│   └── AiAvatar.tsx          # reactive Memoji state machine
+├── data/knowledge.ts         # ← single source of truth
+└── lib/context.ts            # persona + knowledge → system prompt
 ```
 
-## Deploy (Vercel)
+**Forking this for yourself?** Replace `src/data/knowledge.ts` and the persona in `src/lib/context.ts`, drop your own images into `public/`, and it's your portfolio.
 
-1. Push this folder to a GitHub repo.
-2. Import it at vercel.com → it auto-detects Next.js.
-3. Add `GROQ_API_KEY` (and optionally `GROQ_MODEL`) as an Environment Variable.
-4. Deploy. Point your domain at it.
+## About me
 
-## Make it yours — where to edit
+Applied ML / AI Engineer. I build production GenAI — multi-agent systems, RAG, LLM fine-tuning — and I care most about systems that stay grounded and refuse to make things up.
 
-| What | File |
-| --- | --- |
-| Every fact the grounded agent can cite | `src/data/profile.ts` |
-| Hero headline + stat strip | `src/components/Hero.tsx` |
-| Sample questions | `src/components/Interrogate.tsx` (`SAMPLES`) |
-| Work list + links | `src/components/WorkIndex.tsx` |
-| Colors, type, spacing | `src/app/globals.css` (`:root` tokens) |
-| The LLM prompts + model | `src/app/api/interrogate/route.ts` |
+Smart India Hackathon 2024 — **All India Rank 2** of 49,000+ teams · Rajasthan Royals hackathon — **4th of 7,599** · first-author paper under review.
 
-## Honesty note
+[GitHub](https://github.com/roybishal362) · [LinkedIn](https://www.linkedin.com/in/bishal-roy-5410b5257/) · roybishal9989@gmail.com
 
-The grounded agent can only say what's in `profile.ts`. Keep that file **true** — that's the whole
-point. If you add a claim, make sure you can defend it in an interview.
+<div align="center"><sub>Built with Next.js and Claude. Ask it something.</sub></div>

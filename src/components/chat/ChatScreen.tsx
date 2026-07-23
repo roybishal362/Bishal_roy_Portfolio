@@ -15,7 +15,7 @@ export default function ChatScreen() {
   const autoSubmitted = useRef(false);
 
   const [msgs, setMsgs] = useState<Msg[]>([]);
-  const [input, setInput] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
   const [loading, setLoading] = useState(false);
   const [working, setWorking] = useState(false);
   const [statusIdx, setStatusIdx] = useState(0);
@@ -52,25 +52,53 @@ export default function ChatScreen() {
     );
   }
 
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
   function stopSpeech() {
     if (typeof window !== "undefined" && window.speechSynthesis) window.speechSynthesis.cancel();
+    if (audioRef.current) { audioRef.current.pause(); audioRef.current.src = ""; audioRef.current = null; }
     setSpeaking(false);
   }
 
-  function speak(text: string, onDone?: () => void) {
+  // fallback: the browser's built-in voice (always available, but robotic)
+  function browserSpeak(say: string, onDone?: () => void) {
     if (typeof window === "undefined" || !window.speechSynthesis) { onDone?.(); return; }
-    const say = speakable(text);
-    if (!say) { onDone?.(); return; }
     window.speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(say);
     const v = pickVoice();
     if (v) { u.voice = v; u.lang = v.lang; }
     u.rate = 1.02;
-    u.pitch = 0.95; // a touch lower — reads male
+    u.pitch = 0.92; // lower — reads male
     u.onstart = () => { setSpeaking(true); setAv("talking"); };
     u.onend = () => { setSpeaking(false); setAv("idle"); onDone?.(); };
     u.onerror = () => { setSpeaking(false); onDone?.(); };
     window.speechSynthesis.speak(u);
+  }
+
+  // Prefer real, natural TTS (ElevenLabs via /api/tts). Falls back to the
+  // browser voice when no key is configured (route returns 204).
+  async function speak(text: string, onDone?: () => void) {
+    const say = speakable(text);
+    if (!say) { onDone?.(); return; }
+    stopSpeech();
+    try {
+      const r = await fetch("/api/tts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: say }),
+      });
+      if (r.ok && (r.headers.get("content-type") || "").includes("audio")) {
+        const url = URL.createObjectURL(await r.blob());
+        const a = new Audio(url);
+        audioRef.current = a;
+        a.onplay = () => { setSpeaking(true); setAv("talking"); };
+        a.onended = () => { setSpeaking(false); setAv("idle"); URL.revokeObjectURL(url); audioRef.current = null; onDone?.(); };
+        a.onerror = () => { URL.revokeObjectURL(url); browserSpeak(say, onDone); };
+        await a.play();
+        return;
+      }
+    } catch { /* fall through to the browser voice */ }
+    browserSpeak(say, onDone);
   }
 
   function startListening() {
@@ -225,7 +253,12 @@ export default function ChatScreen() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initialQuery]);
 
-  function submit(e: React.FormEvent) { e.preventDefault(); const v = input; setInput(""); ask(v); }
+  function submit(e: React.FormEvent) {
+    e.preventDefault();
+    const v = inputRef.current?.value ?? "";
+    if (inputRef.current) inputRef.current.value = "";
+    ask(v);
+  }
 
   return (
     <div className="cs-root">
@@ -233,13 +266,7 @@ export default function ChatScreen() {
       <SiteNav onAsk={ask} />
 
       <div className="cs-topright">
-        <button
-          className={`ghostbtn${voiceMode ? " on" : ""}`}
-          onClick={toggleVoiceMode}
-          title={voiceMode ? "Voice mode on — just talk to me" : "Voice mode — talk to me out loud"}
-        >
-          {voiceMode ? "● Voice mode" : "🎙 Voice mode"}
-        </button>
+        <a className="ghostbtn" href="/Bishal_Roy_Resume_1page.pdf" target="_blank" rel="noopener noreferrer">Résumé ↗</a>
         <button className="ghostbtn" onClick={() => router.push("/")}>← Home</button>
       </div>
 
@@ -296,7 +323,17 @@ export default function ChatScreen() {
         <div className="cs-bottom">
           <QuickQuestions onAsk={ask} />
           <form className="cs-input" onSubmit={submit}>
-            <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Ask me anything…" maxLength={500} aria-label="Ask Bishal's AI" />
+            <button
+              type="button"
+              className={`cs-mic${voiceMode ? " on" : ""}${listening ? " live" : ""}`}
+              onClick={toggleVoiceMode}
+              aria-pressed={voiceMode}
+              aria-label={voiceMode ? "Turn voice mode off" : "Turn voice mode on"}
+              title={voiceMode ? "Voice mode is ON — tap to stop" : "Voice mode — tap, then just talk"}
+            >
+              <svg viewBox="0 0 24 24" aria-hidden><rect x="9" y="2" width="6" height="12" rx="3" /><path d="M5 11a7 7 0 0 0 14 0" /><path d="M12 18v4" /></svg>
+            </button>
+            <input ref={inputRef} type="text" placeholder="Ask me anything…" maxLength={500} aria-label="Ask Bishal's AI" autoComplete="off" />
             <button className="send" type="submit" disabled={loading} aria-label="Send">↑</button>
           </form>
         </div>

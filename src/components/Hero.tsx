@@ -20,7 +20,7 @@ export default function Hero() {
         <span className="pill"><span className="livedot" /> Available for roles</span>
         <div className="topright">
           <a className="ghostbtn" href="https://github.com/roybishal362" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-          <a className="ghostbtn" href="#">Résumé</a>
+          <a className="ghostbtn" href="/Bishal_Roy_Resume.pdf" target="_blank" rel="noopener noreferrer">Résumé ↗</a>
         </div>
       </header>
 

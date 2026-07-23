@@ -179,7 +179,13 @@ export default function ChatScreen() {
     return () => clearInterval(id);
   }, [working]);
 
-  useEffect(() => { if (scrollRef.current) scrollRef.current.scrollTop = 0; }, [currentAI]);
+  // new answer → glide back to the top instead of snapping
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const reduce = typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    el.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+  }, [latestUser?.text]);
 
   function appendText(v: string) {
     setMsgs((m) => {

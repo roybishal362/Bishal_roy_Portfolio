@@ -199,8 +199,21 @@ button { font-family: inherit; color: inherit; }
 .cs-avatar { display: flex; justify-content: center; width: 100%; background: none; border: 0; cursor: pointer; padding: 0; pointer-events: auto; }
 .cs-userq { max-width: 760px; margin: 14px auto 0; padding: 0 18px; display: flex; justify-content: flex-end; pointer-events: auto; }
 .cs-main { max-width: 760px; margin: 0 auto; height: 100%; display: flex; flex-direction: column; }
-.cs-scroll { flex: 1; overflow-y: auto; padding: 0 16px; }
-.cs-answer { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding-bottom: 18px; }
+.cs-scroll { flex: 1; overflow-y: auto; padding: 0 16px; scroll-behavior: smooth; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--line-2) transparent; }
+.cs-scroll::-webkit-scrollbar { width: 8px; }
+.cs-scroll::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 999px; }
+.cs-scroll::-webkit-scrollbar-track { background: transparent; }
+.cs-answer { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding-bottom: 26px; }
+/* each block eases in as it lands — base state stays visible so a stalled
+   animation can never hide the answer */
+.cs-answer > * { animation: csBlockIn 0.32s cubic-bezier(0.2, 0.7, 0.2, 1); }
+@keyframes csBlockIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+/* streaming text shouldn't reflow harshly */
+.cs-answer .msg.ai { transition: none; word-break: break-word; overflow-wrap: anywhere; }
+@media (prefers-reduced-motion: reduce) {
+  .cs-scroll { scroll-behavior: auto; }
+  .cs-answer > * { animation: none; }
+}
 .cs-landing { min-height: 40vh; display: grid; place-items: center; text-align: center; }
 .cs-landing p { color: var(--muted); font-family: var(--font-serif); font-size: 1.02rem; line-height: 1.55; max-width: 44ch; }
 .cs-bottom { position: sticky; bottom: 0; background: var(--bg); padding: 10px 16px 16px; }

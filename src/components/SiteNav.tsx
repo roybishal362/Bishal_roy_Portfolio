@@ -24,7 +24,7 @@ export default function SiteNav({ onAsk }: { onAsk?: (q: string) => void }) {
   return (
     <nav className="sidenav" aria-label="Sections">
       {NAV.map((n) => (
-        <button key={n.id} onClick={() => go(n.q)}>
+        <button key={n.id} onClick={() => go(n.q)} aria-label={n.label} title={n.label}>
           <svg viewBox="0 0 24 24" aria-hidden>{n.icon}</svg>
           <span className="lbl">{n.label}</span>
         </button>

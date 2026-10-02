@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#11111b"/><stop offset="1" stop-color="#07070c"/></linearGradient>
+  <radialGradient id="g1" cx="0.517" cy="0.600" r="0.62"><stop offset="0" stop-color="#22D3EE" stop-opacity="0.42"/><stop offset="0.55" stop-color="#22D3EE" stop-opacity="0.10"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/></radialGradient>
+  <radialGradient id="g2" cx="0.08" cy="0.05" r="0.6"><stop offset="0" stop-color="#22D3EE" stop-opacity="0.28"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/></radialGradient>
+  <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#ffffff" fill-opacity="0.07"/></pattern>
+  <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.09"/><stop offset="1" stop-color="#ffffff" stop-opacity="0.03"/></linearGradient>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="9"/></filter>
+</defs>
+<rect width="1200" height="800" fill="url(#bg)"/>
+<rect width="1200" height="800" fill="url(#dots)"/>
+<rect width="1200" height="800" fill="url(#g2)"/>
+<rect width="1200" height="800" fill="url(#g1)"/>
+<rect x="290" y="270" width="300" height="126" rx="16" fill="#0b0b13" fill-opacity="0.72"/><rect x="290" y="270" width="300" height="126" rx="16" fill="url(#glass)" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.4"/>
+<rect x="312" y="296" width="190" height="10" rx="5.0" fill="#ffffff" fill-opacity="0.34"/>
+<rect x="312" y="318" width="240" height="9" rx="4.5" fill="#ffffff" fill-opacity="0.18"/>
+<rect x="312" y="346" width="90" height="28" rx="14.0" fill="rgba(34,211,238,0.16)" stroke="#22D3EE" stroke-opacity="0.55" stroke-width="1.2"/><text x="357.0" y="364.68" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="13" font-weight="600" fill="#22D3EE" fill-opacity="1.0" text-anchor="middle">Connector</text>
+<rect x="410" y="346" width="34" height="28" rx="14.0" fill="rgba(248,113,113,0.16)" stroke="#f87171" stroke-opacity="0.55" stroke-width="1.2"/><text x="427.0" y="364.68" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="13" font-weight="600" fill="#f87171" fill-opacity="1.0" text-anchor="middle">P0</text>
+<rect x="452" y="346" width="98" height="28" rx="14.0" fill="rgba(251,146,60,0.16)" stroke="#fb923c" stroke-opacity="0.55" stroke-width="1.2"/><text x="501.0" y="364.68" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="13" font-weight="600" fill="#fb923c" fill-opacity="1.0" text-anchor="middle">frustrated</text>
+<rect x="290" y="420" width="300" height="126" rx="16" fill="#0b0b13" fill-opacity="0.72"/><rect x="290" y="420" width="300" height="126" rx="16" fill="url(#glass)" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.4"/>
+<rect x="312" y="446" width="190" height="10" rx="5.0" fill="#ffffff" fill-opacity="0.34"/>
+<rect x="312" y="468" width="240" height="9" rx="4.5" fill="#ffffff" fill-opacity="0.18"/>
+<rect x="312" y="496" width="66" height="28" rx="14.0" fill="rgba(34,211,238,0.16)" stroke="#22D3EE" stroke-opacity="0.55" stroke-width="1.2"/><text x="345.0" y="514.68" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="13" font-weight="600" fill="#22D3EE" fill-opacity="1.0" text-anchor="middle">How-to</text>
+<rect x="386" y="496" width="34" height="28" rx="14.0" fill="rgba(52,211,153,0.16)" stroke="#34d399" stroke-opacity="0.55" stroke-width="1.2"/><text x="403.0" y="514.68" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="13" font-weight="600" fill="#34d399" fill-opacity="1.0" text-anchor="middle">P2</text>
+<rect x="428" y="496" width="74" height="28" rx="14.0" fill="rgba(166,165,178,0.16)" stroke="#a6a5b2" stroke-opacity="0.55" stroke-width="1.2"/><text x="465.0" y="514.68" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="13" font-weight="600" fill="#a6a5b2" fill-opacity="1.0" text-anchor="middle">neutral</text>
+<rect x="290" y="570" width="300" height="126" rx="16" fill="#0b0b13" fill-opacity="0.72"/><rect x="290" y="570" width="300" height="126" rx="16" fill="url(#glass)" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.4"/>
+<rect x="312" y="596" width="190" height="10" rx="5.0" fill="#ffffff" fill-opacity="0.34"/>
+<rect x="312" y="618" width="240" height="9" rx="4.5" fill="#ffffff" fill-opacity="0.18"/>
+<rect x="312" y="646" width="42" height="28" rx="14.0" fill="rgba(34,211,238,0.16)" stroke="#22D3EE" stroke-opacity="0.55" stroke-width="1.2"/><text x="333.0" y="664.68" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="13" font-weight="600" fill="#22D3EE" fill-opacity="1.0" text-anchor="middle">SSO</text>
+<rect x="362" y="646" width="34" height="28" rx="14.0" fill="rgba(251,191,36,0.16)" stroke="#fbbf24" stroke-opacity="0.55" stroke-width="1.2"/><text x="379.0" y="664.68" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="13" font-weight="600" fill="#fbbf24" fill-opacity="1.0" text-anchor="middle">P1</text>
+<rect x="404" y="646" width="74" height="28" rx="14.0" fill="rgba(166,165,178,0.16)" stroke="#a6a5b2" stroke-opacity="0.55" stroke-width="1.2"/><text x="441.0" y="664.68" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="13" font-weight="600" fill="#a6a5b2" fill-opacity="1.0" text-anchor="middle">curious</text>
+<rect x="660" y="300" width="250" height="250" rx="18" fill="#0b0b13" fill-opacity="0.72"/><rect x="660" y="300" width="250" height="250" rx="18" fill="url(#glass)" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.4"/>
+<text x="682" y="340" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="13" font-weight="500" fill="#ffffff" fill-opacity="0.6" text-anchor="start" letter-spacing="2">ANSWER</text>
+<rect x="682" y="358" width="200" height="10" rx="5.0" fill="#ffffff" fill-opacity="0.3"/>
+<rect x="682" y="380" width="180" height="10" rx="5.0" fill="#ffffff" fill-opacity="0.2"/>
+<rect x="682" y="402" width="204" height="10" rx="5.0" fill="#ffffff" fill-opacity="0.2"/>
+<rect x="682" y="424" width="150" height="10" rx="5.0" fill="#ffffff" fill-opacity="0.2"/>
+<text x="682" y="476" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="13" font-weight="500" fill="#ffffff" fill-opacity="0.6" text-anchor="start">sources</text>
+<rect x="682" y="490" width="82" height="28" rx="14.0" fill="rgba(34,211,238,0.16)" stroke="#22D3EE" stroke-opacity="0.55" stroke-width="1.2"/><text x="723.0" y="508.68" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="13" font-weight="600" fill="#22D3EE" fill-opacity="1.0" text-anchor="middle">docs/sso</text>
+<rect x="772" y="490" width="82" height="28" rx="14.0" fill="rgba(34,211,238,0.16)" stroke="#22D3EE" stroke-opacity="0.55" stroke-width="1.2"/><text x="813.0" y="508.68" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="13" font-weight="600" fill="#22D3EE" fill-opacity="1.0" text-anchor="middle">docs/api</text>
+<rect x="660" y="590" width="250" height="86" rx="18" fill="#0b0b13" fill-opacity="0.72"/><rect x="660" y="590" width="250" height="86" rx="18" fill="url(#glass)" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.4"/>
+<text x="682" y="626" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="13" font-weight="500" fill="#ffffff" fill-opacity="0.6" text-anchor="start" letter-spacing="2">ROUTED</text>
+<rect x="682" y="638" width="155" height="28" rx="14.0" fill="rgba(251,191,36,0.16)" stroke="#fbbf24" stroke-opacity="0.55" stroke-width="1.2"/><text x="759.5" y="656.68" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="13" font-weight="600" fill="#fbbf24" fill-opacity="1.0" text-anchor="middle">to the right team</text>
+<line x1="594" y1="333" x2="652" y2="400" stroke="#22D3EE" stroke-opacity="0.9" stroke-width="2.4" stroke-linecap="round"/><path d="M640.8 395.7 L652 400 L649.3 388.3" fill="none" stroke="#22D3EE" stroke-opacity="0.9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="594" y1="483" x2="652" y2="440" stroke="#22D3EE" stroke-opacity="0.9" stroke-width="2.4" stroke-linecap="round"/><path d="M646.8 450.8 L652 440 L640.1 441.8" fill="none" stroke="#22D3EE" stroke-opacity="0.9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="594" y1="633" x2="652" y2="633" stroke="#fbbf24" stroke-opacity="0.9" stroke-width="2.4" stroke-linecap="round"/><path d="M641.4 638.6 L652 633 L641.4 627.4" fill="none" stroke="#fbbf24" stroke-opacity="0.9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

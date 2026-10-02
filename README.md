@@ -55,7 +55,6 @@ question → Claude (streaming + native tool_use)
 | **Grounded digital twin** | Answers in first person from a typed knowledge base. Won't invent numbers, employers or placements. |
 | **Generative UI** | The model picks the card: project carousel, experience timeline, competitions, research, skills, résumé, contact. |
 | **Reactive Memoji** | 20 expressions across 10 states — thinks, talks, celebrates, gets confused. Cross-fades only *after* the next frame has loaded, so it never flickers. |
-| **Voice mode** | Hands-free: speech recognition in, natural TTS out, then it listens again. Falls back to browser speech when no key is set. |
 | **Streaming + failover** | Server-Sent Events with prompt caching; Groq automatically covers for Anthropic if it fails. |
 | **Project deep-dives** | Real screenshots pulled from each project's own repo, expanding into problem → approach → architecture → results, with live demo links. |
 
@@ -63,7 +62,6 @@ question → Claude (streaming + native tool_use)
 
 - **Framework** — Next.js 15 (App Router), React 19, TypeScript (strict)
 - **AI** — Anthropic Claude: streaming with native `tool_use`, prompt-cached system prompt; Groq fallback
-- **Voice** — Web Speech Recognition · ElevenLabs TTS (optional) with `speechSynthesis` fallback
 - **UI** — Hand-written CSS (no UI framework), Framer Motion, Three.js orb, WebGL fluid cursor
 - **Deploy** — Vercel
 
@@ -85,8 +83,6 @@ npm run dev                        # http://localhost:3000
 | `ANTHROPIC_MODEL` | — | Defaults to `claude-haiku-4-5-20251001` |
 | `GROQ_API_KEY` | — | Automatic fallback if Anthropic is unavailable |
 | `GROQ_MODEL` | — | Defaults to `llama-3.3-70b-versatile` |
-| `ELEVENLABS_API_KEY` | — | Natural voice. Without it, voice mode uses the browser's built-in speech |
-| `ELEVENLABS_VOICE_ID` | — | Override the default male voice |
 
 > `.env.local` is gitignored and never committed. On Vercel, add these under **Settings → Environment Variables**.
 
@@ -97,8 +93,7 @@ src/
 ├── app/
 │   ├── page.tsx              # landing — orb, memoji, prompt, nav rail
 │   ├── chat/page.tsx         # full-screen conversation
-│   ├── api/chat/route.ts     # Claude streaming + tool_use → SSE, Groq fallback
-│   └── api/tts/route.ts      # natural text-to-speech
+│   └── api/chat/route.ts     # Claude streaming + tool_use → SSE, Groq fallback
 ├── components/
 │   ├── chat/                 # ChatScreen, cards, quick questions, prompt bar
 │   ├── cards/                # project poster cards + expand modal
@@ -111,9 +106,9 @@ src/
 
 ## About me
 
-Applied ML / AI Engineer. I build production GenAI — multi-agent systems, RAG, LLM fine-tuning — and I care most about systems that stay grounded and refuse to make things up.
+Applied AI Engineer. I build and evaluate GenAI systems — multi-agent systems, RAG, LLM fine-tuning — and I care most about systems that stay grounded and refuse to make things up.
 
-Smart India Hackathon 2024 — **All India Rank 2** of 49,000+ teams · Rajasthan Royals hackathon — **4th of 7,599** · first-author paper under review.
+Smart India Hackathon 2024 — **Runner-up at the Grand Finale** (Indian Sign Language problem statement) · Rajasthan Royals SupeRR Selector Hackathon 2025 — **4th place nationally** (7,500+ participants, solo) · first-author paper under review.
 
 [GitHub](https://github.com/roybishal362) · [LinkedIn](https://www.linkedin.com/in/bishal-roy-5410b5257/) · roybishal9989@gmail.com
 

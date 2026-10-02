@@ -19,8 +19,9 @@ export default function Hero() {
       <header className="top">
         <span className="pill"><span className="livedot" /> Available for roles</span>
         <div className="topright">
-          <a className="ghostbtn" href="https://github.com/roybishal362" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
           <a className="ghostbtn" href="/Bishal_Roy_Resume.pdf" target="_blank" rel="noopener noreferrer">Résumé ↗</a>
+          <a className="ghostbtn" href="#proof">30-second version ↓</a>
+          <a className="ghostbtn" href="https://github.com/roybishal362" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
         </div>
       </header>
 
@@ -29,7 +30,7 @@ export default function Hero() {
           <AiAvatar state="greeting" size={52} />
           <span>Hi, I&apos;m <b>Bishal Roy</b></span>
         </div>
-        <p className="eyebrow rise" style={{ animationDelay: "0.05s" }}>Applied ML / AI Engineer · Pune, IN</p>
+        <p className="eyebrow rise" style={{ animationDelay: "0.05s" }}>Applied AI Engineer · Pune, IN</p>
 
         <div className="rise" style={{ animationDelay: "0.15s" }}><Orb /></div>
 
@@ -47,6 +48,8 @@ export default function Hero() {
         </div>
 
         <div className="rise" style={{ animationDelay: "0.64s", width: "100%" }}><Marquee /></div>
+
+        <a className="scrollcue rise" style={{ animationDelay: "0.76s" }} href="#proof">No time to chat? The 30-second version ↓</a>
       </main>
     </>
   );

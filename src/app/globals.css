@@ -288,6 +288,10 @@ button { font-family: inherit; color: inherit; }
   background: linear-gradient(to top, rgba(8, 8, 14, 0.9) 0%, rgba(8, 8, 14, 0.3) 30%, transparent 55%),
               linear-gradient(to bottom, rgba(8, 8, 14, 0.75) 0%, transparent 38%); }
 .pcar-cat, .pcar-name, .pcar-open { z-index: 2; }
+/* line-art icon (Lucide, ISC): a large faint mark in the corner, plus a small crisp one beside the category */
+.pcar-icon { position: absolute; right: -18px; bottom: -14px; width: 176px; height: 176px; opacity: 0.2; transform: rotate(-8deg); pointer-events: none; z-index: 0; }
+.pcar-badge { width: 15px; height: 15px; margin-right: 7px; vertical-align: -3px; opacity: 0.95; }
+.pmodal-icon { width: 15px; height: 15px; margin-right: 8px; vertical-align: -3px; filter: drop-shadow(0 0 6px var(--a)); }
 .pmodal-shot { display: block; width: 100%; border-radius: 14px; border: 1px solid var(--line-2); margin: 4px 0 18px; }
 .pmodal-foot a.live { border-color: #34d399; color: #34d399; }
 .pcar-cat { position: relative; z-index: 1; font-family: var(--font-mono, monospace); font-size: 0.64rem; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; opacity: 0.82; }
@@ -328,7 +332,7 @@ button { font-family: inherit; color: inherit; }
 .sidenav button { display: flex; align-items: center; gap: 10px; width: 148px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; color: var(--muted); cursor: pointer; backdrop-filter: blur(8px); transition: transform 0.18s, border-color 0.18s, color 0.18s, background 0.18s; }
 .sidenav button:hover { transform: translateX(3px); border-color: var(--violet); color: var(--ink); }
 .sidenav button.active { border-color: var(--violet); color: var(--ink); background: var(--surface-2); }
-.sidenav svg { width: 19px; height: 19px; flex: 0 0 auto; stroke-width: 1.7; fill: none; }
+.sidenav svg { width: 19px; height: 19px; flex: 0 0 auto; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; fill: none; }
 .sidenav .lbl { font-family: var(--font-mono, monospace); font-size: 0.76rem; }
 @media (max-width: 720px) { .sidenav { left: 50%; top: auto; bottom: 14px; transform: translateX(-50%); flex-direction: row; gap: 6px; } .sidenav button { width: auto; padding: 9px 11px; } .sidenav .lbl { display: none; } }
 
@@ -546,5 +550,88 @@ h1.hero-title .grad { background: linear-gradient(100deg, #a78bfa, #5b8def 35%, 
 }
 @media (max-width: 560px) {
   .tile { width: 88px; padding: 12px 8px; }
-  .topright .ghostbtn:last-child { display: none; }
+  .topright .ghostbtn:not(:first-child) { display: none; }
 }
+
+/* =====================  the 30-second version (home page, under the hero)  ===================== */
+html { scroll-behavior: smooth; }
+.scrollcue { display: inline-block; margin-top: 22px; font-family: var(--font-mono, monospace); font-size: 0.76rem; color: var(--muted);
+  border: 1px solid var(--line); border-radius: 999px; padding: 8px 16px; background: var(--surface); transition: color 0.18s, border-color 0.18s; }
+.scrollcue:hover { color: var(--ink); border-color: var(--violet); }
+
+/* width leaves room for the fixed side menu on desktop; on phones the menu sits at the bottom instead */
+.proof { position: relative; z-index: 2; width: min(1000px, calc(100vw - 372px)); margin: 0 auto; padding: 72px 0 96px; text-align: left; }
+.proof-eyebrow { font-family: var(--font-mono, monospace); font-size: 0.74rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal); }
+.proof-title { font-family: var(--font-display, sans-serif); font-weight: 800; font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.08; letter-spacing: -0.03em; margin-top: 10px; }
+.proof-sum { font-size: 1.02rem; line-height: 1.6; color: var(--muted); max-width: 46rem; margin-top: 14px; }
+
+.proof-cta, .proof-end { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.proof-end { margin-top: 44px; }
+.proof-btn { font-family: var(--font-mono, monospace); font-size: 0.78rem; color: var(--ink); background: var(--surface); border: 1px solid var(--line-2);
+  border-radius: 999px; padding: 10px 16px; cursor: pointer; transition: border-color 0.18s, transform 0.18s; }
+.proof-btn:hover { border-color: var(--violet); transform: translateY(-1px); }
+.proof-btn.primary { background: linear-gradient(100deg, #7c5cff, #4c7dff); border-color: transparent; color: #fff; }
+
+.proof-block { margin-top: 44px; }
+.proof-h { font-family: var(--font-display, sans-serif); font-weight: 700; font-size: 1.05rem; color: var(--ink); margin-bottom: 14px; }
+.proof-h span { font-family: var(--font-mono, monospace); font-weight: 400; font-size: 0.72rem; color: var(--faint); margin-left: 10px; }
+
+.proof-now { border: 1px solid var(--line-2); border-radius: 18px; padding: 22px; background:
+  radial-gradient(120% 90% at 0% 0%, rgba(124, 92, 255, 0.16), transparent 60%), var(--surface); }
+.proof-now-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; }
+.proof-now-head .org { font-family: var(--font-display, sans-serif); font-weight: 700; font-size: 1.2rem; }
+.proof-now-head .role { font-family: var(--font-mono, monospace); font-size: 0.76rem; color: var(--muted); }
+.proof-now-line { font-size: 0.98rem; line-height: 1.55; color: var(--muted); margin-top: 8px; max-width: 48rem; }
+.proof-now-line b { color: var(--ink); font-weight: 600; }
+.proof-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 18px; }
+.proof-stats > div { border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; background: rgba(8, 8, 14, 0.55); }
+.proof-stats .v { display: block; font-family: var(--font-display, sans-serif); font-weight: 800; font-size: 1.5rem; letter-spacing: -0.02em; color: var(--ink); }
+.proof-stats .l { display: block; font-size: 0.8rem; line-height: 1.4; color: var(--muted); margin-top: 4px; }
+
+.proof-wins { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
+.proof-win { display: flex; flex-direction: column; gap: 3px; border: 1px solid var(--line); border-left: 3px solid var(--mc, var(--violet)); border-radius: 12px; padding: 13px 15px; background: var(--surface); }
+.proof-win .rk { font-family: var(--font-display, sans-serif); font-weight: 800; font-size: 1.08rem; color: var(--mc, var(--violet)); }
+.proof-win .ev { font-size: 0.88rem; color: var(--ink); }
+.proof-win .sc { font-size: 0.74rem; line-height: 1.35; color: var(--faint); }
+
+.proof-projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.proof-projects .pcar-card { flex: none; width: 100%; height: 250px; }
+.proof-projects .pcar-name { font-size: 1.45rem; line-height: 1.06; }
+/* text sits above the card's dark overlay, so names read at full white */
+.proof-projects .pcar-cat, .proof-projects .pcar-name, .proof-projects .pcar-open { z-index: 2; }
+.pcar-proof { position: relative; z-index: 2; font-size: 0.84rem; line-height: 1.4; color: #fff; opacity: 0.9; margin-top: 10px; }
+.proof-more { margin-top: 14px; font-family: var(--font-mono, monospace); font-size: 0.76rem; color: var(--muted); background: none; border: none; cursor: pointer; padding: 6px 0; }
+.proof-more:hover { color: var(--ink); }
+
+.proof-stack { display: flex; flex-wrap: wrap; gap: 8px; }
+.proof-stack span { font-family: var(--font-mono, monospace); font-size: 0.74rem; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; background: var(--surface); }
+
+@media (max-width: 1100px) { .proof { width: min(1000px, calc(100vw - 364px)); } .proof-projects { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 720px) {
+  .proof { width: calc(100vw - 36px); padding: 48px 0 120px; }
+  .proof-stats { grid-template-columns: 1fr 1fr; }
+  .proof-stats .v { font-size: 1.25rem; }
+  .proof-projects { grid-template-columns: 1fr; }
+  /* the side menu becomes a bottom bar here: keep it one tidy row */
+  .sidenav { max-width: calc(100vw - 20px); background: rgba(10, 10, 16, 0.82); border: 1px solid var(--line); border-radius: 16px; padding: 6px; backdrop-filter: blur(10px); }
+  .sidenav button { background: transparent; border-color: transparent; }
+}
+@media (max-width: 460px) { .proof-stats { grid-template-columns: 1fr; } }
+/* on a phone keep the résumé button and drop GitHub from the header (it is in the section below) */
+
+/* drawn hero illustration on a project card: it fills the lower part of the card and fades out behind the title */
+.pcar-art { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 70%; opacity: 0.92; pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 6%, #000 46%); mask-image: linear-gradient(to bottom, transparent 6%, #000 46%); }
+
+/* home-page project cards: the picture sits in its own band on top, the words below it, so they never overlap */
+.proof-projects .pcar-card { height: auto; min-height: 336px; padding-top: 176px; }
+.proof-projects .pcar-art, .proof-projects .pcar-img { inset: 0 0 auto 0; height: 168px; opacity: 1; object-position: 50% 60%;
+  -webkit-mask-image: linear-gradient(to bottom, #000 68%, transparent 100%); mask-image: linear-gradient(to bottom, #000 68%, transparent 100%); }
+.proof-projects .pcar-art { transform: scale(1.3); transform-origin: 50% 62%; }
+.proof-projects .pcar-img { opacity: 0.9; }
+.proof-projects .pcar-card::after { background: linear-gradient(to top, rgba(8, 8, 14, 0.5) 0%, transparent 45%); }
+.proof-projects .pcar-open { margin-top: 16px; }
+/* in the project pop-up a drawn illustration is cropped to a wide banner */
+.pmodal-shot.art { aspect-ratio: 16 / 9; object-fit: cover; object-position: 50% 62%; }
+/* card words sit above the dark overlay everywhere, so project names read at full white */
+.pcar-card .pcar-cat, .pcar-card .pcar-name, .pcar-card .pcar-open { z-index: 2; }

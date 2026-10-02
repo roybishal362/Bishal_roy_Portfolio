@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#11111b"/><stop offset="1" stop-color="#07070c"/></linearGradient>
+  <radialGradient id="g1" cx="0.500" cy="0.625" r="0.62"><stop offset="0" stop-color="#EC6EA8" stop-opacity="0.42"/><stop offset="0.55" stop-color="#EC6EA8" stop-opacity="0.10"/><stop offset="1" stop-color="#EC6EA8" stop-opacity="0"/></radialGradient>
+  <radialGradient id="g2" cx="0.08" cy="0.05" r="0.6"><stop offset="0" stop-color="#EC6EA8" stop-opacity="0.28"/><stop offset="1" stop-color="#EC6EA8" stop-opacity="0"/></radialGradient>
+  <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#ffffff" fill-opacity="0.07"/></pattern>
+  <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.09"/><stop offset="1" stop-color="#ffffff" stop-opacity="0.03"/></linearGradient>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="9"/></filter>
+</defs>
+<rect width="1200" height="800" fill="url(#bg)"/>
+<rect width="1200" height="800" fill="url(#dots)"/>
+<rect width="1200" height="800" fill="url(#g2)"/>
+<rect width="1200" height="800" fill="url(#g1)"/>
+<ellipse cx="600" cy="500" rx="330" ry="232" fill="#EC6EA8" fill-opacity="0.07" stroke="#EC6EA8" stroke-opacity="0.75" stroke-width="2.4"/>
+<ellipse cx="600" cy="500" rx="170" ry="120" fill="none" stroke="#ffffff" stroke-opacity="0.28" stroke-width="1.6" stroke-dasharray="8 8"/>
+<rect x="586" y="448" width="28" height="104" rx="4" fill="#ffffff" fill-opacity="0.16" stroke="#ffffff" stroke-opacity="0.5"/>
+<line x1="600" y1="540" x2="300" y2="415" stroke="#EC6EA8" stroke-opacity="0.95" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="300" cy="415" r="6" fill="#EC6EA8" fill-opacity="1"/>
+<line x1="600" y1="540" x2="458" y2="372" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="458" cy="372" r="4" fill="#ffffff" fill-opacity="0.6"/>
+<line x1="600" y1="540" x2="557" y2="284" stroke="#EC6EA8" stroke-opacity="0.95" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="557" cy="284" r="6" fill="#EC6EA8" fill-opacity="1"/>
+<line x1="600" y1="540" x2="685" y2="387" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="685" cy="387" r="4" fill="#ffffff" fill-opacity="0.6"/>
+<line x1="600" y1="540" x2="883" y2="385" stroke="#EC6EA8" stroke-opacity="0.95" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="883" cy="385" r="6" fill="#EC6EA8" fill-opacity="1"/>
+<line x1="600" y1="540" x2="803" y2="520" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="803" cy="520" r="4" fill="#ffffff" fill-opacity="0.6"/>
+<line x1="600" y1="540" x2="834" y2="629" stroke="#EC6EA8" stroke-opacity="0.95" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="834" cy="629" r="6" fill="#EC6EA8" fill-opacity="1"/>
+<line x1="600" y1="540" x2="642" y2="603" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="642" cy="603" r="4" fill="#ffffff" fill-opacity="0.6"/>
+<line x1="600" y1="540" x2="476" y2="664" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="476" cy="664" r="4" fill="#ffffff" fill-opacity="0.6"/>
+<line x1="600" y1="540" x2="323" y2="613" stroke="#EC6EA8" stroke-opacity="0.95" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="323" cy="613" r="6" fill="#EC6EA8" fill-opacity="1"/>
+<line x1="600" y1="540" x2="410" y2="462" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="410" cy="462" r="4" fill="#ffffff" fill-opacity="0.6"/>
+<circle cx="600" cy="540" r="8" fill="#ffffff"/>
+<rect x="676" y="560" width="220" height="168" rx="16" fill="#0b0b13" fill-opacity="0.72"/><rect x="676" y="560" width="220" height="168" rx="16" fill="url(#glass)" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.4"/>
+<text x="696" y="592" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="13" font-weight="500" fill="#ffffff" fill-opacity="0.6" text-anchor="start" letter-spacing="1.5">UNCAPPED · RANKED</text>
+<text x="696" y="621" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="14" font-weight="700" fill="#ffffff" fill-opacity="0.8" text-anchor="start">1</text>
+<rect x="718" y="610" width="150" height="12" rx="6.0" fill="#EC6EA8" fill-opacity="0.9"/>
+<text x="696" y="648" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="14" font-weight="700" fill="#ffffff" fill-opacity="0.8" text-anchor="start">2</text>
+<rect x="718" y="637" width="126" height="12" rx="6.0" fill="#EC6EA8" fill-opacity="0.73"/>
+<text x="696" y="675" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="14" font-weight="700" fill="#ffffff" fill-opacity="0.8" text-anchor="start">3</text>
+<rect x="718" y="664" width="108" height="12" rx="6.0" fill="#EC6EA8" fill-opacity="0.56"/>
+<text x="696" y="702" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="14" font-weight="700" fill="#ffffff" fill-opacity="0.8" text-anchor="start">4</text>
+<rect x="718" y="691" width="84" height="12" rx="6.0" fill="#EC6EA8" fill-opacity="0.39"/>
+<rect x="318" y="690" width="193" height="30" rx="15.0" fill="rgba(236,110,168,0.16)" stroke="#EC6EA8" stroke-opacity="0.55" stroke-width="1.2"/><text x="414.5" y="710.4" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="15" font-weight="600" fill="#EC6EA8" fill-opacity="1.0" text-anchor="middle">602,992 deliveries</text>
+</svg>

@@ -9,11 +9,11 @@ const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500"], variab
 export const metadata: Metadata = {
   title: "Bishal Roy — Ask my AI",
   description:
-    "Applied ML / AI Engineer. Don't read my résumé — ask my AI. A grounded assistant trained on my real work that cites its sources and runs my models live.",
-  metadataBase: new URL("https://bishal-roypy.vercel.app"),
+    "Applied AI Engineer. LLM pipelines, RAG and AI agents. Don't read my résumé — ask my AI, a digital twin grounded in my real projects, experience and competitions.",
+  metadataBase: new URL("https://bishal-roy-portfolio.vercel.app"),
   openGraph: {
     title: "Bishal Roy — Ask my AI",
-    description: "Applied ML / AI Engineer. Talk to a grounded AI trained on my real work.",
+    description: "Applied AI Engineer. Talk to a grounded AI trained on my real work.",
     type: "website",
   },
 };

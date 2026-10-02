@@ -15,8 +15,8 @@ const QUICK = [
 
 const GROUPS: { name: string; questions: string[] }[] = [
   { name: "Me", questions: ["Who are you?", "What are your passions?", "How did you get into AI/ML?", "Where do you see yourself in 5 years?"] },
-  { name: "Professional", questions: ["Why should I hire you?", "Why are you doing an APM internship when your skills are in applied AI?", "Walk me through your journey.", "What's your educational background?", "How are you with DSA?"] },
-  { name: "Projects", questions: ["Show me all your projects", "What's your strongest project?", "Tell me about Kakehashi", "Tell me about VayuNetra"] },
+  { name: "Professional", questions: ["Why should I hire you?", "How did a product intern end up building the AI platform?", "Walk me through your journey.", "What's your educational background?", "How are you with DSA?"] },
+  { name: "Projects", questions: ["Show me all your projects", "What did you build at Interview Kickstart?", "What's your strongest project?", "Tell me about the Amazon ML Challenge", "Tell me about your RSNA knee MRI work"] },
   { name: "Competitions", questions: ["What have you won?", "Tell me about SIH 2024", "What happened at the Rajasthan Royals hackathon?"] },
   { name: "Fun", questions: ["Cricket or code?", "What's the craziest thing about you?", "What anime do you love?", "What are you certain about that 90% of people get wrong?"] },
   { name: "Contact & future", questions: ["How can I reach you?", "What kind of project would make you say yes instantly?", "Where are you based?"] },
@@ -24,10 +24,11 @@ const GROUPS: { name: string; questions: string[] }[] = [
 
 const SPECIAL = new Set([
   "Who are you?",
+  "What did you build at Interview Kickstart?",
   "What's your strongest project?",
   "What have you won?",
   "Cricket or code?",
-  "Why are you doing an APM internship when your skills are in applied AI?",
+  "How did a product intern end up building the AI platform?",
 ]);
 
 export default function QuickQuestions({ onAsk }: { onAsk: (q: string) => void }) {

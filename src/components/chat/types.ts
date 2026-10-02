@@ -24,10 +24,3 @@ export function clean(s: string): string {
     .trim();
 }
 
-// Same, plus emoji removed — speech engines otherwise announce them.
-export function speakable(s: string): string {
-  return clean(s)
-    .replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}\u{2190}-\u{21FF}\u{2B00}-\u{2BFF}]/gu, "")
-    .replace(/\s+/g, " ")
-    .trim();
-}

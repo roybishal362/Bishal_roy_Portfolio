@@ -20,7 +20,7 @@ const TOOLS: Anthropic.Tool[] = [
   { name: "show_skills", description: "Render the skills card (grouped technical skills). Call when asked about skills, tech stack, or what he works with.", input_schema: { type: "object", properties: {} } },
   { name: "show_research", description: "Render the research card (papers under review). Call when asked about research, papers, or publications.", input_schema: { type: "object", properties: {} } },
   { name: "show_experience", description: "Render the work-experience timeline (roles, orgs, dates, what he shipped). Call when asked about work experience, internships, where he has worked, or his career so far.", input_schema: { type: "object", properties: {} } },
-  { name: "show_resume", description: "Render the résumé card offering both a 1-page recruiter version and a detailed full version. Call when asked for a resume, CV, or a downloadable profile.", input_schema: { type: "object", properties: {} } },
+  { name: "show_resume", description: "Render the résumé card (the one-page PDF, plus a shortcut to every project card). Call when asked for a resume, CV, or a downloadable profile.", input_schema: { type: "object", properties: {} } },
 ];
 
 const TOOL_NOTE =
@@ -33,7 +33,7 @@ const TOOL_NOTE =
   "- show_skills → my technical skills / tech stack\n" +
   "- show_research → my research papers / publications\n" +
   "- show_experience → my work experience / internships / where I've worked\n" +
-  "- show_resume → my résumé / CV (offers a 1-page and a detailed version)\n" +
+  "- show_resume → my résumé / CV (the one-page PDF)\n" +
   "- show_contact → how to reach / hire me\n" +
   "RULES:\n" +
   "- Match the question to a tool and CALL it: \"who are you / tell me about yourself\" → show_about; \"your projects\" → show_projects; a specific project (even \"your strongest?\") → show_project(id); \"what have you won / competitions\" → show_competitions; \"your skills\" → show_skills; \"research / papers\" → show_research; \"work experience / internships\" → show_experience; \"resume / CV\" → show_resume; \"how to reach you\" → show_contact.\n" +

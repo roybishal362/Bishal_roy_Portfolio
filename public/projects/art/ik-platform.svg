@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#11111b"/><stop offset="1" stop-color="#07070c"/></linearGradient>
+  <radialGradient id="g1" cx="0.533" cy="0.600" r="0.62"><stop offset="0" stop-color="#7C5CFF" stop-opacity="0.42"/><stop offset="0.55" stop-color="#7C5CFF" stop-opacity="0.10"/><stop offset="1" stop-color="#7C5CFF" stop-opacity="0"/></radialGradient>
+  <radialGradient id="g2" cx="0.08" cy="0.05" r="0.6"><stop offset="0" stop-color="#7C5CFF" stop-opacity="0.28"/><stop offset="1" stop-color="#7C5CFF" stop-opacity="0"/></radialGradient>
+  <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#ffffff" fill-opacity="0.07"/></pattern>
+  <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.09"/><stop offset="1" stop-color="#ffffff" stop-opacity="0.03"/></linearGradient>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="9"/></filter>
+</defs>
+<rect width="1200" height="800" fill="url(#bg)"/>
+<rect width="1200" height="800" fill="url(#dots)"/>
+<rect width="1200" height="800" fill="url(#g2)"/>
+<rect width="1200" height="800" fill="url(#g1)"/>
+<rect x="250" y="236" width="700" height="500" rx="24" fill="#0b0b13" fill-opacity="0.72"/><rect x="250" y="236" width="700" height="500" rx="24" fill="url(#glass)" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.4"/>
+<text x="290" y="286" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="15" font-weight="500" fill="#ffffff" fill-opacity="0.6" text-anchor="start" letter-spacing="2">CLASS TIMELINE · 4 H · 8 WINDOWS</text>
+<rect x="290" y="310" width="70" height="16" rx="8.0" fill="#ffffff" fill-opacity="0.16"/>
+<rect x="368" y="310" width="70" height="16" rx="8.0" fill="#ffffff" fill-opacity="0.16"/>
+<rect x="446" y="310" width="70" height="16" rx="8.0" fill="#7C5CFF" fill-opacity="0.95"/>
+<rect x="524" y="310" width="70" height="16" rx="8.0" fill="#ffffff" fill-opacity="0.16"/>
+<rect x="602" y="310" width="70" height="16" rx="8.0" fill="#ffffff" fill-opacity="0.16"/>
+<rect x="680" y="310" width="70" height="16" rx="8.0" fill="#fbbf24" fill-opacity="0.95"/>
+<rect x="758" y="310" width="70" height="16" rx="8.0" fill="#ffffff" fill-opacity="0.16"/>
+<rect x="836" y="310" width="70" height="16" rx="8.0" fill="#ffffff" fill-opacity="0.16"/>
+<line x1="481.0" y1="326" x2="481.0" y2="352" stroke="#7C5CFF" stroke-width="2"/>
+<rect x="429.0" y="352" width="89" height="28" rx="14.0" fill="rgba(124,92,255,0.16)" stroke="#7C5CFF" stroke-opacity="0.55" stroke-width="1.2"/><text x="473.5" y="371.04" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="14" font-weight="600" fill="#7C5CFF" fill-opacity="1.0" text-anchor="middle">01:12:40</text>
+<line x1="715.0" y1="326" x2="715.0" y2="352" stroke="#fbbf24" stroke-width="2"/>
+<rect x="663.0" y="352" width="89" height="28" rx="14.0" fill="rgba(251,191,36,0.16)" stroke="#fbbf24" stroke-opacity="0.55" stroke-width="1.2"/><text x="707.5" y="371.04" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="14" font-weight="600" fill="#fbbf24" fill-opacity="1.0" text-anchor="middle">02:47:05</text>
+<rect x="290" y="406" width="400" height="176" rx="16" fill="#0b0b13" fill-opacity="0.72"/><rect x="290" y="406" width="400" height="176" rx="16" fill="url(#glass)" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1.4"/>
+<text x="314" y="452" font-family="Inter, 'Segoe UI', system-ui, -apple-system, Arial, sans-serif" font-size="54" font-weight="700" fill="#7C5CFF" fill-opacity="1.0" text-anchor="start">“</text>
+<rect x="350" y="432" width="300" height="10" rx="5.0" fill="#ffffff" fill-opacity="0.34"/>
+<rect x="350" y="454" width="250" height="10" rx="5.0" fill="#ffffff" fill-opacity="0.22"/>
+<rect x="350" y="476" width="280" height="10" rx="5.0" fill="#ffffff" fill-opacity="0.22"/>
+<rect x="314" y="520" width="173" height="30" rx="15.0" fill="rgba(124,92,255,0.16)" stroke="#7C5CFF" stroke-opacity="0.55" stroke-width="1.2"/><text x="400.5" y="540.04" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="14" font-weight="600" fill="#7C5CFF" fill-opacity="1.0" text-anchor="middle">quote + timestamp</text>
+<rect x="497" y="520" width="164" height="30" rx="15.0" fill="rgba(52,211,153,0.16)" stroke="#34d399" stroke-opacity="0.55" stroke-width="1.2"/><text x="579.0" y="540.04" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="14" font-weight="600" fill="#34d399" fill-opacity="1.0" text-anchor="middle">2nd pass: upheld</text>
+<circle cx="800" cy="494" r="78" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="12"/>
+<path d="M800.0 416.0 A78 78 0 1 1 732.5 533.0" fill="none" stroke="#7C5CFF" stroke-opacity="1.0" stroke-width="12" stroke-linecap="round"/>
+<text x="800" y="498" font-family="Inter, 'Segoe UI', system-ui, -apple-system, Arial, sans-serif" font-size="30" font-weight="800" fill="#ffffff" fill-opacity="1.0" text-anchor="middle">~9 min</text>
+<text x="800" y="524" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="14" font-weight="500" fill="#ffffff" fill-opacity="0.6" text-anchor="middle">4-hour class</text>
+<rect x="290" y="606" width="620" height="96" rx="16" fill="#0b0b13" fill-opacity="0.72"/><rect x="290" y="606" width="620" height="96" rx="16" fill="url(#glass)" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1.4"/>
+<text x="314" y="640" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="13" font-weight="500" fill="#ffffff" fill-opacity="0.55" text-anchor="start" letter-spacing="2">INSTRUCTOR NOTE</text>
+<rect x="314" y="658" width="330" height="10" rx="5.0" fill="#ffffff" fill-opacity="0.28"/>
+<rect x="314" y="678" width="250" height="10" rx="5.0" fill="#ffffff" fill-opacity="0.18"/>
+<rect x="704" y="640" width="199" height="30" rx="15.0" fill="rgba(52,211,153,0.16)" stroke="#34d399" stroke-opacity="0.55" stroke-width="1.2"/><text x="803.5" y="660.04" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="14" font-weight="600" fill="#34d399" fill-opacity="1.0" text-anchor="middle">approved by a person</text>
+</svg>

@@ -15,7 +15,7 @@ export const GLYPH: Record<string, string> = {
 };
 
 // the visual "poster" card face — used in the chat carousel AND the left Projects panel
-export function ProjectPoster({ p, index = 0, onOpen }: { p: Project; index?: number; onOpen: () => void }) {
+export function ProjectPoster({ p, index = 0, onOpen, proof = false }: { p: Project; index?: number; onOpen: () => void; proof?: boolean }) {
   return (
     <motion.button
       className="pcar-card"
@@ -28,11 +28,22 @@ export function ProjectPoster({ p, index = 0, onOpen }: { p: Project; index?: nu
       {p.image ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img className="pcar-img" src={p.image} alt="" aria-hidden />
+      ) : p.art ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img className="pcar-art" src={p.art} alt="" aria-hidden />
+      ) : p.icon ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img className="pcar-icon" src={p.icon} alt="" aria-hidden />
       ) : (
         <span className="pcar-glyph" aria-hidden>{GLYPH[p.id] ?? "✦"}</span>
       )}
-      <span className="pcar-cat">{p.tags[0]}</span>
+      <span className="pcar-cat">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        {p.icon && <img className="pcar-badge" src={p.icon} alt="" aria-hidden />}
+        {p.tags[0]}
+      </span>
       <span className="pcar-name">{p.name}</span>
+      {proof && p.proof && <span className="pcar-proof">{p.proof}</span>}
       <span className="pcar-spacer" />
       <span className="pcar-open">{p.links.demo ? "Live · View project →" : "View project →"}</span>
     </motion.button>
@@ -55,12 +66,16 @@ export function ProjectModal({ p, onClose, onAsk }: { p: Project; onClose: () =>
       <div className="pmodal-scrim" onClick={onClose} />
       <div className="pmodal" style={{ ["--a" as string]: p.accent }}>
         <button className="pmodal-x" onClick={onClose} aria-label="Close">✕</button>
-        <div className="pmodal-event">{p.event} · {p.year}</div>
+        <div className="pmodal-event">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          {p.icon && <img className="pmodal-icon" src={p.icon} alt="" aria-hidden />}
+          {p.event} · {p.year}
+        </div>
         <h3 className="pmodal-name">{p.name}</h3>
         <p className="pmodal-tag">{p.tagline}</p>
-        {p.image && (
+        {(p.image || p.art) && (
           // eslint-disable-next-line @next/next/no-img-element
-          <img className="pmodal-shot" src={p.image} alt={`${p.name} screenshot`} />
+          <img className={p.image ? "pmodal-shot" : "pmodal-shot art"} src={p.image || p.art} alt={p.image ? `${p.name} screenshot` : `${p.name} illustration`} />
         )}
         <div className="pmodal-metrics">
           {p.metrics.map((m) => (
@@ -81,6 +96,7 @@ export function ProjectModal({ p, onClose, onAsk }: { p: Project; onClose: () =>
         <div className="pmodal-foot">
           {p.links.demo && <a className="live" href={p.links.demo} target="_blank" rel="noopener noreferrer">● Live demo ↗</a>}
           {p.links.video && <a href={p.links.video} target="_blank" rel="noopener noreferrer">▶ Watch demo ↗</a>}
+          {p.links.extra?.map((x) => <a key={x.url} href={x.url} target="_blank" rel="noopener noreferrer">▶ {x.label} ↗</a>)}
           {p.links.api && <a href={p.links.api} target="_blank" rel="noopener noreferrer">API ↗</a>}
           {p.links.bot && <a href={p.links.bot} target="_blank" rel="noopener noreferrer">Telegram bot ↗</a>}
           {p.links.repo && <a href={p.links.repo} target="_blank" rel="noopener noreferrer">View repository ↗</a>}

@@ -1,5 +1,5 @@
 /* ===========================================================================
-   Bishal Roy — "Ask my AI" · immersive dark hero
+   Bishal Roy, "Ask my AI" · immersive dark hero
    Living AI orb centerpiece, iridescent accents, glassy surfaces.
    =========================================================================== */
 
@@ -47,7 +47,7 @@ button { font-family: inherit; color: inherit; }
   -webkit-mask-image: radial-gradient(62% 55% at 50% 38%, #000 0%, transparent 76%);
           mask-image: radial-gradient(62% 55% at 50% 38%, #000 0%, transparent 76%);
 }
-/* colorful WebGL fluid cursor — behind content, click-through */
+/* colorful WebGL fluid cursor, behind content, click-through */
 .fluid-holder { position: fixed; inset: 0; z-index: 1; pointer-events: none; }
 .fluid-canvas { display: block; width: 100vw; height: 100vh; }
 
@@ -56,7 +56,7 @@ button { font-family: inherit; color: inherit; }
 .rise { opacity: 0; animation: riseUp 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) forwards; }
 @media (prefers-reduced-motion: reduce) { .rise { opacity: 1; animation: none; } }
 
-/* Memoji assistant avatar — two stacked layers cross-fade so it visibly reacts */
+/* Memoji assistant avatar, two stacked layers cross-fade so it visibly reacts */
 .ai-avatar { position: relative; display: inline-block; border-radius: 50%; overflow: hidden; flex: 0 0 auto;
   background: radial-gradient(circle at 50% 30%, #1a1b24, #09090f);
   box-shadow: 0 0 0 1px var(--line), 0 12px 34px -12px rgba(139, 92, 246, 0.55); }
@@ -187,11 +187,6 @@ button { font-family: inherit; color: inherit; }
 .cs-root { position: relative; height: 100vh; height: 100dvh; overflow: hidden; background: var(--bg); }
 .cs-topright { position: absolute; top: 18px; right: 20px; z-index: 60; display: flex; gap: 8px; align-items: center; }
 .cs-topright .ghostbtn.on { border-color: var(--violet); color: var(--ink); }
-.cs-voice { pointer-events: auto; margin: 10px auto 0; width: fit-content; font-family: var(--font-mono, monospace); font-size: 0.72rem; color: var(--muted); background: var(--surface); border: 1px solid var(--line-2); border-radius: 999px; padding: 5px 13px; }
-.cs-voice.live { color: #34d399; border-color: color-mix(in srgb, #34d399 45%, var(--line-2)); animation: csPulse 1.4s ease-in-out infinite; }
-@keyframes csPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
-.cs-speak { align-self: flex-start; font-family: var(--font-mono, monospace); font-size: 0.7rem; color: var(--muted); background: var(--surface); border: 1px solid var(--line-2); border-radius: 999px; padding: 6px 12px; cursor: pointer; transition: border-color 0.15s, color 0.15s; }
-.cs-speak:hover { color: var(--ink); border-color: var(--violet); }
 .cs-header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; pointer-events: none;
   background: linear-gradient(to bottom, var(--bg) 0%, var(--bg) 58%, transparent 100%); }
 .cs-headpad { padding: 22px 0 18px; transition: padding 0.3s ease; }
@@ -204,7 +199,7 @@ button { font-family: inherit; color: inherit; }
 .cs-scroll::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 999px; }
 .cs-scroll::-webkit-scrollbar-track { background: transparent; }
 .cs-answer { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding-bottom: 26px; }
-/* each block eases in as it lands — base state stays visible so a stalled
+/* each block eases in as it lands, base state stays visible so a stalled
    animation can never hide the answer */
 .cs-answer > * { animation: csBlockIn 0.32s cubic-bezier(0.2, 0.7, 0.2, 1); }
 @keyframes csBlockIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
@@ -219,18 +214,9 @@ button { font-family: inherit; color: inherit; }
 .cs-bottom { position: sticky; bottom: 0; background: var(--bg); padding: 10px 16px 16px; }
 .cs-input { display: flex; align-items: center; gap: 8px; margin-top: 10px; background: var(--surface); border: 1px solid var(--line-2); border-radius: 14px; padding: 8px 8px 8px 14px; }
 .cs-input input { flex: 1; min-width: 0; background: none; border: 0; outline: 0; color: var(--ink); font-family: var(--font-body); font-size: 0.95rem; }
-/* mic — tap to open/close voice mode */
-.cs-mic { flex: 0 0 auto; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; cursor: pointer;
-  background: var(--surface-2); border: 1px solid var(--line-2); color: var(--muted); transition: all 0.18s ease; }
-.cs-mic svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.cs-mic:hover { color: var(--ink); border-color: var(--violet); }
-.cs-mic.on { color: #fff; border-color: transparent; background: linear-gradient(135deg, var(--violet), var(--blue)); box-shadow: 0 6px 20px -6px rgba(139, 92, 246, 0.7); }
-.cs-mic.live { background: linear-gradient(135deg, #10b981, #34d399); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.55); animation: micPulse 1.5s ease-out infinite; }
-@keyframes micPulse { 0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.55); } 70% { box-shadow: 0 0 0 12px rgba(52, 211, 153, 0); } 100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); } }
-@media (prefers-reduced-motion: reduce) { .cs-mic.live { animation: none; } }
 .cs-input input::placeholder { color: var(--faint); }
 
-/* quick questions — right rail on desktop, wrapped row in the bottom bar on small screens */
+/* quick questions, right rail on desktop, wrapped row in the bottom bar on small screens */
 .qq-rail { position: fixed; right: 18px; top: 50%; transform: translateY(-50%); z-index: 45; width: 150px; display: flex; flex-direction: column; gap: 8px; }
 .qq-chip { display: inline-flex; align-items: center; gap: 9px; width: 100%; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; color: var(--muted); font-size: 0.85rem; cursor: pointer; backdrop-filter: blur(8px); transition: transform 0.18s, border-color 0.18s, color 0.18s, background 0.18s; }
 .qq-chip:hover { transform: translateX(-3px); border-color: var(--violet); color: var(--ink); }
@@ -336,7 +322,7 @@ button { font-family: inherit; color: inherit; }
 .sidenav .lbl { font-family: var(--font-mono, monospace); font-size: 0.76rem; }
 @media (max-width: 720px) { .sidenav { left: 50%; top: auto; bottom: 14px; transform: translateX(-50%); flex-direction: row; gap: 6px; } .sidenav button { width: auto; padding: 9px 11px; } .sidenav .lbl { display: none; } }
 
-/* competitions — trophy wall */
+/* competitions, trophy wall */
 .comp-list { display: flex; flex-direction: column; gap: 14px; }
 .comp-card { display: flex; align-items: center; gap: 18px; background: var(--surface); border: 1px solid var(--line-2); border-radius: 16px; padding: 16px 20px; transition: border-color 0.2s, transform 0.2s; }
 .comp-card:hover { transform: translateX(4px); border-color: var(--comp-accent); }
@@ -352,7 +338,7 @@ button { font-family: inherit; color: inherit; }
 .comp-main a { font-family: var(--font-mono, monospace); font-size: 0.72rem; color: var(--comp-accent); margin-top: 8px; display: inline-block; }
 @media (max-width: 560px) { .comp-card { flex-direction: column; align-items: flex-start; gap: 12px; } .comp-rank { width: auto; } }
 
-/* research — paper reader */
+/* research, paper reader */
 .paper { background: var(--surface); border: 1px solid var(--line-2); border-radius: 16px; padding: 24px; margin-bottom: 16px; }
 .paper .venue { font-family: var(--font-mono, monospace); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--violet); }
 .paper h3 { font-family: var(--font-serif); font-size: 1.35rem; font-weight: 600; margin: 8px 0; line-height: 1.3; color: var(--ink); }

@@ -10,10 +10,10 @@ import { ProjectPoster, ProjectModal } from "./cards/projectPieces";
 // Plain CSS, no entrance animation, so it is always visible even when the fluid sim is busy.
 // Every number here also appears in data/knowledge.ts and on the résumé.
 const STATS: { value: string; label: string }[] = [
-  { value: "~9 min", label: "to turn a 4-hour class into instructor feedback, for about $1" },
+  { value: "~10 min", label: "to turn a 4-hour class into instructor feedback, for about $1" },
   { value: "3 days / week", label: "of manual review saved (estimated), for a team of about 100 programme managers" },
   { value: "84% → 99%", label: "vision accuracy, tested against a labelled answer key" },
-  { value: "11%", label: "lower LLM cost on long classes" },
+  { value: "10-15%", label: "lower LLM cost on long classes, from prompt caching" },
 ];
 
 const STACK = ["Python", "LLM pipelines", "RAG", "AI agents", "LangChain", "FastAPI", "PyTorch", "XGBoost", "SQL", "PostgreSQL", "Next.js", "Docker"];
@@ -33,6 +33,7 @@ export default function Proof() {
 
       <div className="proof-cta">
         <a className="proof-btn primary" href="/Bishal_Roy_Resume.pdf" target="_blank" rel="noopener noreferrer">Download résumé ↗</a>
+        <a className="proof-btn" href="/Bishal_Roy_Academic_CV.pdf" target="_blank" rel="noopener noreferrer">Academic CV ↗</a>
         <a className="proof-btn" href={PROFILE.github} target="_blank" rel="noopener noreferrer">GitHub ↗</a>
         <a className="proof-btn" href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
         <a className="proof-btn" href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a>
@@ -40,11 +41,11 @@ export default function Proof() {
 
       {now && (
         <div className="proof-block">
-          <h3 className="proof-h">Now</h3>
+          <h3 className="proof-h">Most recent role</h3>
           <div className="proof-now">
             <div className="proof-now-head">
               <span className="org">{now.org}</span>
-              <span className="role">{now.role} · Apr 2026 – Present</span>
+              <span className="role">{now.role} · Apr 2026 - Oct 2026</span>
             </div>
             <p className="proof-now-line">
               <b>Full end-to-end ownership</b> of Feedback Loop, a live AI platform that scores 3,000+ classes and drafts instructor feedback with a multi-stage LLM pipeline.
@@ -88,6 +89,7 @@ export default function Proof() {
 
       <div className="proof-end">
         <a className="proof-btn primary" href="/Bishal_Roy_Resume.pdf" target="_blank" rel="noopener noreferrer">Download résumé ↗</a>
+        <a className="proof-btn" href="/Bishal_Roy_Academic_CV.pdf" target="_blank" rel="noopener noreferrer">Academic CV ↗</a>
         <button className="proof-btn" onClick={() => ask("Why should I hire you?")}>Ask my AI why you should hire me →</button>
       </div>
 

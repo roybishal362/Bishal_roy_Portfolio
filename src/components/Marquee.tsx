@@ -1,6 +1,6 @@
 import { COMPETITIONS } from "@/data/knowledge";
 
-// A subtle "proof" ticker of real competition placements — single source of truth
+// A subtle "proof" ticker of real competition placements, single source of truth
 // (data/knowledge.ts), not a hardcoded copy of the projects.
 export default function Marquee() {
   const loop = [...COMPETITIONS, ...COMPETITIONS];

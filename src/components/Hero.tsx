@@ -40,7 +40,7 @@ export default function Hero() {
 
         <p className="hero-sub rise" style={{ animationDelay: "0.4s" }}>
           A digital twin trained on my real projects, competitions and papers.{" "}
-          <b>Ask it anything</b> — it answers in my voice and pulls up the receipts.
+          <b>Ask it anything</b>. It answers in my voice and pulls up the receipts.
         </p>
 
         <div className="rise" style={{ animationDelay: "0.52s", width: "100%" }}>

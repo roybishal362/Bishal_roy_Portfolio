@@ -34,7 +34,7 @@
 <rect x="497" y="520" width="164" height="30" rx="15.0" fill="rgba(52,211,153,0.16)" stroke="#34d399" stroke-opacity="0.55" stroke-width="1.2"/><text x="579.0" y="540.04" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="14" font-weight="600" fill="#34d399" fill-opacity="1.0" text-anchor="middle">2nd pass: upheld</text>
 <circle cx="800" cy="494" r="78" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="12"/>
 <path d="M800.0 416.0 A78 78 0 1 1 732.5 533.0" fill="none" stroke="#7C5CFF" stroke-opacity="1.0" stroke-width="12" stroke-linecap="round"/>
-<text x="800" y="498" font-family="Inter, 'Segoe UI', system-ui, -apple-system, Arial, sans-serif" font-size="30" font-weight="800" fill="#ffffff" fill-opacity="1.0" text-anchor="middle">~9 min</text>
+<text x="800" y="498" font-family="Inter, 'Segoe UI', system-ui, -apple-system, Arial, sans-serif" font-size="30" font-weight="800" fill="#ffffff" fill-opacity="1.0" text-anchor="middle">~10 min</text>
 <text x="800" y="524" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="14" font-weight="500" fill="#ffffff" fill-opacity="0.6" text-anchor="middle">4-hour class</text>
 <rect x="290" y="606" width="620" height="96" rx="16" fill="#0b0b13" fill-opacity="0.72"/><rect x="290" y="606" width="620" height="96" rx="16" fill="url(#glass)" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1.4"/>
 <text x="314" y="640" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="13" font-weight="500" fill="#ffffff" fill-opacity="0.55" text-anchor="start" letter-spacing="2">INSTRUCTOR NOTE</text>

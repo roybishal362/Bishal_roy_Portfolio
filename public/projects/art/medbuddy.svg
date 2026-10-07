@@ -36,5 +36,5 @@
 <text x="380" y="616" font-family="Inter, 'Segoe UI', system-ui, -apple-system, Arial, sans-serif" font-size="18" font-weight="700" fill="#F472B6" fill-opacity="1.0" text-anchor="start">In plain words</text>
 <rect x="380" y="636" width="430" height="10" rx="5.0" fill="#ffffff" fill-opacity="0.3"/>
 <rect x="380" y="658" width="370" height="10" rx="5.0" fill="#ffffff" fill-opacity="0.2"/>
-<rect x="380" y="682" width="260" height="30" rx="15.0" fill="rgba(52,211,153,0.16)" stroke="#34d399" stroke-opacity="0.55" stroke-width="1.2"/><text x="510.0" y="702.04" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="14" font-weight="600" fill="#34d399" fill-opacity="1.0" text-anchor="middle">checked against MedlinePlus</text>
+<rect x="380" y="682" width="269" height="30" rx="15.0" fill="rgba(52,211,153,0.16)" stroke="#34d399" stroke-opacity="0.55" stroke-width="1.2"/><text x="514.5" y="702.04" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="14" font-weight="600" fill="#34d399" fill-opacity="1.0" text-anchor="middle">self-check: Verified or Flag</text>
 </svg>

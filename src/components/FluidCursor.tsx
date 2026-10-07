@@ -10,7 +10,7 @@ export default function FluidCursor() {
     try {
       fluidCursor();
     } catch {
-      /* no WebGL2 — silently skip; the rest of the page is unaffected */
+      /* no WebGL2, silently skip; the rest of the page is unaffected */
     }
   }, []);
 

@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 
 // Bishal's Memoji, mapped to real conversational states. Each state is a bucket of
-// expressions; the avatar cross-fades between them so it visibly REACTS — thinking,
-// talking, celebrating a win, or confused on an error — like a Bitmoji that's alive.
+// expressions; the avatar cross-fades between them so it visibly REACTS, thinking,
+// talking, celebrating a win, or confused on an error, like a Bitmoji that's alive.
 export const MEMOJI = {
   greeting: ["greeting"],
   idle: ["peace"],

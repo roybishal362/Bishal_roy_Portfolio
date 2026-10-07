@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-make_project_art.py — draws the hero illustration for each project card (public/projects/art/<id>.svg).
+make_project_art.py: draws the hero illustration for each project card (public/projects/art/<id>.svg).
 
 Each one is a small "product shot" in the project's accent colour: it shows what the project does, not a stock picture.
 The numbers and labels in the drawings are illustrative UI, except where they repeat a fact from src/data/knowledge.ts.
@@ -104,7 +104,7 @@ def ik_platform(a):
     cx, cy, r = 800, 494, 78
     b.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="12"/>')
     b.append(arc(cx, cy, r, -90, 150, a, w=12))
-    b.append(text(cx, cy + 4, "~9 min", size=30, weight=800, anchor="middle"))
+    b.append(text(cx, cy + 4, "~10 min", size=30, weight=800, anchor="middle"))
     b.append(text(cx, cy + 30, "4-hour class", size=14, weight=500, op=0.6, anchor="middle", mono=True))
     # the note a person approves
     b.append(panel(290, 606, 620, 96, r=16, stroke=0.14))
@@ -135,7 +135,7 @@ def c_trust(a):
     na = math.radians(242)
     b.append(f'<line x1="{cx}" y1="{cy}" x2="{cx + (r - 36) * math.cos(na):.0f}" y2="{cy + (r - 36) * math.sin(na):.0f}" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>')
     b.append(f'<circle cx="{cx}" cy="{cy}" r="12" fill="#ffffff"/>')
-    b.append(text(cx, cy + 60, "weighted consensus → risk 0–100", size=17, weight=500, op=0.75, anchor="middle", mono=True))
+    b.append(text(cx, cy + 60, "weighted consensus → risk 0 to 100", size=17, weight=500, op=0.75, anchor="middle", mono=True))
     c, w = chip(cx - 118, cy + 80, "550+ passing tests", a, size=15); b.append(c)
     return doc(a, "\n".join(b), glow=(600, 560))
 
@@ -211,7 +211,7 @@ def piu(a):
         b.append(f'<polyline points="{" ".join(pts)}" fill="none" stroke="{col}" stroke-opacity="{op}" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>')
     # ordered severity 0-3, split by tuned cut-points
     b.append(panel(270, 524, 660, 216, r=20))
-    b.append(text(300, 566, "SEVERITY · ORDERED 0–3 · TUNED CUT-POINTS", size=14, weight=500, op=0.6, mono=True, spacing=2))
+    b.append(text(300, 566, "SEVERITY · ORDERED 0 TO 3 · TUNED CUT-POINTS", size=14, weight=500, op=0.6, mono=True, spacing=2))
     base, x0 = 706, 320
     for i, hgt in enumerate((38, 66, 96, 124)):
         x = x0 + i * 150
@@ -267,7 +267,7 @@ def medbuddy(a):
     b.append(f'<path d="M410 574 l-26 -24 l52 0 z" fill="#1a1a26" stroke="#ffffff" stroke-opacity="0.18"/>')
     b.append(text(380, 616, "In plain words", size=18, weight=700, fill=a))
     b.append(bar(380, 636, 430, 10, op=0.3)); b.append(bar(380, 658, 370, 10, op=0.2))
-    c, w = chip(380, 682, "checked against MedlinePlus", GREEN, size=14); b.append(c)
+    c, w = chip(380, 682, "self-check: Verified or Flag", GREEN, size=14); b.append(c)
     return doc(a, "\n".join(b), glow=(600, 500))
 
 # --------------------------------------------------------------------------- 8. Support copilot

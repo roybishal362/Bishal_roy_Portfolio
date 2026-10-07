@@ -5,7 +5,7 @@ import ProjectCarousel from "../cards/ProjectCarousel";
 import { STATUS_LABELS, clean, type Msg } from "./types";
 import { PROFILE, PROJECTS, COMPETITIONS, SKILLS, EXPERIENCE } from "@/data/knowledge";
 
-// the "working" indicator — reactive Memoji + rotating playful label
+// the "working" indicator, reactive Memoji + rotating playful label
 export function StatusRow({ statusIdx }: { statusIdx: number }) {
   return (
     <div className="ai-status">
@@ -75,7 +75,7 @@ export function Card({ name, props, onAsk }: { name: string; props: Record<strin
         </div>
         <div className="cc-foot">
           <button className="cc-btn" onClick={() => onAsk("Why did you get into AI/ML?")}>why AI?</button>
-          <button className="cc-btn" onClick={() => onAsk("How did a product intern end up building the AI platform?")}>product intern → builder</button>
+          <button className="cc-btn" onClick={() => onAsk("How did an intern end up owning the AI platform?")}>intern → owner</button>
           <button className="cc-btn" onClick={() => onAsk("Walk me through your journey.")}>my journey</button>
         </div>
       </div>
@@ -118,12 +118,17 @@ export function Card({ name, props, onAsk }: { name: string; props: Record<strin
     const doc = <><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" /><path d="M14 3v6h6" /></>;
     return (
       <div className="cc">
-        <div className="cc-head"><div className="t">Résumé</div><div className="s">One page — the same version I send to recruiters.</div></div>
+        <div className="cc-head"><div className="t">Résumé and CV</div><div className="s">The one-page résumé I send to recruiters, and the long academic CV.</div></div>
         <div className="ct-grid">
           <div className="ct-tile">
-            <div className="ct-top"><span className="ct-ic" style={{ color: "#34d399" }}><svg viewBox="0 0 24 24" aria-hidden>{doc}</svg></span><span className="ct-label">1-page PDF</span></div>
+            <div className="ct-top"><span className="ct-ic" style={{ color: "#34d399" }}><svg viewBox="0 0 24 24" aria-hidden>{doc}</svg></span><span className="ct-label">Résumé · 1 page</span></div>
             <div className="ct-value">Experience, projects, competitions and papers on one page.</div>
             <a className="ct-btn" href="/Bishal_Roy_Resume.pdf" target="_blank" rel="noopener noreferrer">Open résumé ↗</a>
+          </div>
+          <div className="ct-tile">
+            <div className="ct-top"><span className="ct-ic" style={{ color: "#a78bfa" }}><svg viewBox="0 0 24 24" aria-hidden>{doc}</svg></span><span className="ct-label">Academic CV · 4 pages</span></div>
+            <div className="ct-value">The full record: research projects, manuscripts under review, and every project with its method and result.</div>
+            <a className="ct-btn" href="/Bishal_Roy_Academic_CV.pdf" target="_blank" rel="noopener noreferrer">Open academic CV ↗</a>
           </div>
         </div>
         <div className="cc-foot">
@@ -175,7 +180,7 @@ export function Card({ name, props, onAsk }: { name: string; props: Record<strin
         </div>
         <div className="ct-looking">
           <h4>What I&apos;m looking for</h4>
-          <p>Full-time Applied AI / ML Engineer roles — building grounded, production AI. India (open to relocation) or remote, including international. I&apos;m most drawn to problems where AI does something real, not a demo.</p>
+          <p>Full-time Applied AI / ML Engineer roles, building grounded, production AI. India (open to relocation) or remote, including international. I&apos;m most drawn to problems where AI does something real, not a demo.</p>
         </div>
       </div>
     );

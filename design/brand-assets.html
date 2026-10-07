@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>BR. brand assets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=JetBrains+Mono:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* The chosen mark (2 Oct 2026): C1 with the R in violet.
+     Dark tile, white B, violet R, teal full stop. Sora 800.
+     This page is the source for the icon and share-picture PNGs: design/export_brand.mjs screenshots each #id. */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: transparent; }
+  body { font-family: Inter, system-ui, sans-serif; padding: 40px; width: 1400px; color: #f5f4f1; }
+
+  .mark { --s: 512px; width: var(--s); height: var(--s); border-radius: calc(var(--s) * .22); background: #0b0b13; display: grid; place-items: center; overflow: hidden;
+          box-shadow: inset 0 0 0 calc(var(--s) * .03) rgba(255,255,255,.14); font-family: Sora, sans-serif; font-weight: 800; line-height: 1; color: #fff; }
+  .mark span { display: block; white-space: nowrap; font-size: calc(var(--s) * .47); letter-spacing: -0.07em; }
+  .mark .r { color: #7c5cff; } .mark .dot { color: #2dd4bf; }
+  .mark.sq { border-radius: 0; box-shadow: none; }                     /* phones round the corners themselves */
+  .mark.tiny { box-shadow: none; } .mark.tiny span { font-size: calc(var(--s) * .52); }   /* at tab size: no ring, slightly bigger letters */
+  .row { display: flex; align-items: flex-end; gap: 28px; margin-bottom: 40px; }
+
+  /* the picture shown when the link is shared (1200 x 630) */
+  #og { width: 1200px; height: 630px; position: relative; overflow: hidden; background: #07070c; font-family: Sora, sans-serif; }
+  #og::before { content: ""; position: absolute; inset: 0;
+    background: radial-gradient(48% 62% at 12% 8%, rgba(124,92,255,.55), rgba(124,92,255,0) 70%), radial-gradient(46% 60% at 92% 96%, rgba(45,212,191,.42), rgba(45,212,191,0) 70%), radial-gradient(40% 50% at 84% 30%, rgba(76,125,255,.35), rgba(76,125,255,0) 70%); }
+  #og::after { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.07) 1.2px, transparent 1.3px); background-size: 28px 28px; }
+  .og-in { position: absolute; inset: 0; z-index: 2; padding: 56px 64px; display: flex; flex-direction: column; }
+  .og-top { display: flex; align-items: center; gap: 18px; }
+  .og-top .mark { --s: 76px; }
+  .og-top .url { font-family: 'JetBrains Mono', monospace; font-size: 20px; color: #a6a5b2; }
+  .og-name { font-weight: 800; font-size: 104px; letter-spacing: -0.045em; line-height: .98; margin-top: 54px; color: #f5f4f1; }
+  .og-role { font-weight: 700; font-size: 44px; letter-spacing: -0.02em; margin-top: 14px; background: linear-gradient(100deg, #a78bfa, #5b8def 45%, #2dd4bf 80%); -webkit-background-clip: text; background-clip: text; color: transparent; width: fit-content; }
+  .og-line { font-family: Inter, sans-serif; font-size: 28px; color: #c9c8d3; margin-top: 18px; }
+  .og-chips { display: flex; gap: 14px; margin-top: auto; }
+  .og-chip { font-family: 'JetBrains Mono', monospace; font-size: 18px; color: #f5f4f1; border: 1.5px solid rgba(255,255,255,.2); background: rgba(255,255,255,.06); border-radius: 999px; padding: 12px 20px; white-space: nowrap; }
+  .og-chip b { color: #2dd4bf; font-weight: 700; }
+  .og-face { position: absolute; z-index: 2; right: 70px; top: 96px; width: 300px; height: 300px; border-radius: 50%; padding: 14px;
+    background: radial-gradient(60% 55% at 28% 22%, #9af7e6 0%, rgba(154,247,230,0) 60%), radial-gradient(70% 70% at 78% 30%, #4c7dff 0%, rgba(76,125,255,0) 65%), radial-gradient(90% 80% at 50% 100%, #8b5cf6 0%, #5b3fd6 55%, #2a1f6e 100%);
+    box-shadow: 0 0 90px rgba(124,92,255,.45); }
+  .og-face img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; background: #0b0b13; }
+</style></head>
+<body>
+  <div class="row">
+    <div class="mark" id="i512"><span>B<i class="r" style="font-style:normal">R</i><i class="dot" style="font-style:normal">.</i></span></div>
+    <div class="mark" id="i192" style="--s:192px"><span>B<i class="r" style="font-style:normal">R</i><i class="dot" style="font-style:normal">.</i></span></div>
+    <div class="mark sq" id="apple180" style="--s:180px"><span>B<i class="r" style="font-style:normal">R</i><i class="dot" style="font-style:normal">.</i></span></div>
+    <div class="mark tiny" id="i48" style="--s:48px"><span>B<i class="r" style="font-style:normal">R</i><i class="dot" style="font-style:normal">.</i></span></div>
+    <div class="mark tiny" id="i32" style="--s:32px"><span>B<i class="r" style="font-style:normal">R</i><i class="dot" style="font-style:normal">.</i></span></div>
+    <div class="mark tiny" id="i16" style="--s:16px"><span>B<i class="r" style="font-style:normal">R</i><i class="dot" style="font-style:normal">.</i></span></div>
+  </div>
+
+  <div id="og">
+    <div class="og-face"><img src="../public/memoji/greeting.jpeg" alt=""></div>
+    <div class="og-in">
+      <div class="og-top">
+        <div class="mark"><span>B<i class="r" style="font-style:normal">R</i><i class="dot" style="font-style:normal">.</i></span></div>
+        <span class="url">bishal-roy-portfolio.vercel.app</span>
+      </div>
+      <div class="og-name">Bishal Roy</div>
+      <div class="og-role">Applied AI Engineer</div>
+      <div class="og-line">LLM pipelines · RAG · AI agents. Ask my AI anything.</div>
+      <div class="og-chips">
+        <span class="og-chip"><b>Runner-up</b> · Smart India Hackathon</span>
+        <span class="og-chip"><b>4th nationally</b> · Rajasthan Royals</span>
+        <span class="og-chip"><b>Top 8%</b> · Amazon ML</span>
+      </div>
+    </div>
+  </div>
+</body></html>

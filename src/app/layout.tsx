@@ -7,12 +7,12 @@ const inter = Inter({ subsets: ["latin"], weight: ["400", "500"], variable: "--f
 const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-mono", display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Bishal Roy — Ask my AI",
+  title: "Bishal Roy | Ask my AI",
   description:
-    "Applied AI Engineer. LLM pipelines, RAG and AI agents. Don't read my résumé — ask my AI, a digital twin grounded in my real projects, experience and competitions.",
+    "Applied AI Engineer. LLM pipelines, RAG and AI agents. Don't read my résumé. Ask my AI, a digital twin grounded in my real projects, experience and competitions.",
   metadataBase: new URL("https://bishal-roy-portfolio.vercel.app"),
   openGraph: {
-    title: "Bishal Roy — Ask my AI",
+    title: "Bishal Roy | Ask my AI",
     description: "Applied AI Engineer. Talk to a grounded AI trained on my real work.",
     type: "website",
   },

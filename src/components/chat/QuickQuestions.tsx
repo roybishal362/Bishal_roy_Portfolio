@@ -9,13 +9,13 @@ const QUICK = [
   { key: "Skills", emoji: "🛠️", color: "#f59e0b", q: "What are your technical skills?" },
   { key: "Wins", emoji: "🏆", color: "#FFD166", q: "What competitions have you won?" },
   { key: "Experience", emoji: "💼", color: "#60a5fa", q: "Walk me through your work experience." },
-  { key: "Fun", emoji: "🏏", color: "#FF6B6B", q: "Cricket or code — what are you better at?" },
+  { key: "Fun", emoji: "🏏", color: "#FF6B6B", q: "Cricket or code, what are you better at?" },
   { key: "Contact", emoji: "✉️", color: "#06b6d4", q: "How do I reach you?" },
 ];
 
 const GROUPS: { name: string; questions: string[] }[] = [
   { name: "Me", questions: ["Who are you?", "What are your passions?", "How did you get into AI/ML?", "Where do you see yourself in 5 years?"] },
-  { name: "Professional", questions: ["Why should I hire you?", "How did a product intern end up building the AI platform?", "Walk me through your journey.", "What's your educational background?", "How are you with DSA?"] },
+  { name: "Professional", questions: ["Why should I hire you?", "How did an intern end up owning the AI platform?", "Walk me through your journey.", "What's your educational background?", "How are you with DSA?"] },
   { name: "Projects", questions: ["Show me all your projects", "What did you build at Interview Kickstart?", "What's your strongest project?", "Tell me about the Amazon ML Challenge", "Tell me about your RSNA knee MRI work"] },
   { name: "Competitions", questions: ["What have you won?", "Tell me about SIH 2024", "What happened at the Rajasthan Royals hackathon?"] },
   { name: "Fun", questions: ["Cricket or code?", "What's the craziest thing about you?", "What anime do you love?", "What are you certain about that 90% of people get wrong?"] },
@@ -28,7 +28,7 @@ const SPECIAL = new Set([
   "What's your strongest project?",
   "What have you won?",
   "Cricket or code?",
-  "How did a product intern end up building the AI platform?",
+  "How did an intern end up owning the AI platform?",
 ]);
 
 export default function QuickQuestions({ onAsk }: { onAsk: (q: string) => void }) {

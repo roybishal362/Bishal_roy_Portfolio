@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 // Uncontrolled on purpose: a native input stays typeable even before React
 // hydrates. A controlled value="" input is frozen until hydration attaches
-// onChange — which is what made this box impossible to type in.
+// onChange, which is what made this box impossible to type in.
 export default function PromptBar() {
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);

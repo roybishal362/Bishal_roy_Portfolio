@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { type Project } from "@/data/knowledge";
 
-// a domain glyph per project — visual identity without needing screenshots
+// a domain glyph per project, visual identity without needing screenshots
 export const GLYPH: Record<string, string> = {
   kakehashi: "🌉",
   "c-trust": "🩺",
@@ -14,7 +14,7 @@ export const GLYPH: Record<string, string> = {
   piu: "🧠",
 };
 
-// the visual "poster" card face — used in the chat carousel AND the left Projects panel
+// the visual "poster" card face, used in the chat carousel AND the left Projects panel
 export function ProjectPoster({ p, index = 0, onOpen, proof = false }: { p: Project; index?: number; onOpen: () => void; proof?: boolean }) {
   return (
     <motion.button
@@ -50,7 +50,7 @@ export function ProjectPoster({ p, index = 0, onOpen, proof = false }: { p: Proj
   );
 }
 
-// the expand-to-detail modal — shared, self-contained (Escape + scroll-lock handled here)
+// the expand-to-detail modal, shared, self-contained (Escape + scroll-lock handled here)
 export function ProjectModal({ p, onClose, onAsk }: { p: Project; onClose: () => void; onAsk?: (q: string) => void }) {
   useEffect(() => {
     document.body.style.overflow = "hidden";
